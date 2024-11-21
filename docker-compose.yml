@@ -1,0 +1,17 @@
+services:
+  app:
+    container_name: scrape-with-llm-streamlit
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/app
+    ports:
+      - 8089:8080
+    env_file:
+      - .env
+    networks:
+      - scrape-with-llm-streamlit
+
+networks:
+  scrape-with-llm-streamlit:
