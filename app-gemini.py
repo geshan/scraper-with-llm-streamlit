@@ -46,8 +46,8 @@ def read_input():
        llm_function(url, query)
 def llm_function(url, query):
     st.subheader("Talks from : "+ url)
-    response = model.generate_content(query) # Generate response
-    st.markdown(response.text) # Print it out using streamlit
+    response = model.generate_content(query)
+    st.markdown(response.text)
 
 if __name__ == "__main__":
     read_input()
