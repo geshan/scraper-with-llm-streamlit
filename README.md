@@ -5,9 +5,14 @@ and Gemini/Gemma to scrape (almost) any website.
 
 For the example, it will scrape talk titles and speakers from 15+ GDG DevFests around the world.
 
-
 ### This is how it looks
 
-When running it looks like the below:
+It has multiple steps:
+
+#### Step 1 - Beautiful scraper output
+
+![scraper with bs4](./images/scraper-output.jpg)
+
+#### Step 2 with Gemini - output with Stremlit
 
 ![Running app](./images/output.jpg)
