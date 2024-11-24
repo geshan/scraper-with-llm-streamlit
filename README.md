@@ -9,10 +9,14 @@ For the example, it will scrape talk titles and speakers from 15+ GDG DevFests a
 
 It has multiple steps:
 
-#### Step 1 - Beautiful scraper output
+#### Step 1 - Beautiful Soup scraper output
 
 ![scraper with bs4](./images/scraper-output.jpg)
 
 #### Step 2 with Gemini - output with Stremlit
 
 ![Running app](./images/output.jpg)
+
+#### Step 3 with Gemmma using LiteLLM - output
+
+![Scraping output with Gemma 2 2B model](./images/output-gemma.jpg)
