@@ -5,9 +5,9 @@ import os
 
 def call_llm(query):
     response = completion(
-        model="ollama/gemma2:2b",
+        model="ollama/gemma2:9b",
         messages=[{ "content": query, "role": "user"}],
-        api_base=os.environ['OLLAMA_GEMMA2_2B_BASE_URL']
+        api_base=os.environ['OLLAMA_GEMMA2_9B_BASE_URL']
     )
 
     return response["choices"][0]["message"]["content"]
@@ -31,7 +31,7 @@ def read_input():
         soup = BeautifulSoup(r.text, 'html.parser')
         data = soup.text
         prompt = """ from the provided html please pick out all the talk tiles and speakers, 
-               if the talks or names are not in English language please translate them to Egit nglish, 
+               if the talks or names are not in English language please translate them to English, 
                remove any duplicates if you find any and then render it as a table and do not add anything else"""
 
         query = data + prompt

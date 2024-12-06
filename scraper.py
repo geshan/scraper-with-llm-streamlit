@@ -5,7 +5,7 @@ import logging
 logging.basicConfig(format='%(levelname)s: %(message)s', level=logging.INFO)
 
 def scrape_page():
-    url_to_scrape="https://gdg.community.dev/events/details/google-gdg-bangalore-presents-devfest-bangalore-2024"
+    url_to_scrape="https://gdg.community.dev/events/details/google-gdg-surabaya-presents-devfest-surabaya-2024"
     response = requests.get(url_to_scrape)
     if (response.status_code != 200):
         logging.warning("URL did not respond with a 200")
