@@ -25,6 +25,9 @@ def read_input():
         "https://devfest.istanbul/schedule",
         "https://sessionize.com/api/v2/za23h4xc/view/GridSmart",  # devfest London
         "https://devfest.gdgauckland.nz",
+        "https://gdg.community.dev/events/details/google-gdg-nyc-presents-devfest-nyc-2024-responsible-ai-for-the-future-of-tech/",
+        "https://devfestlagos.com/schedule",
+        "https://devfest.gdgparis.fr/agenda",
     ]
     for url in urls:
         print(url)
