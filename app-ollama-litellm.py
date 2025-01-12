@@ -34,7 +34,7 @@ def read_input():
         soup = BeautifulSoup(response.text, 'html.parser')
         data = soup.text
         prompt = """ from the provided html or json please pick out all the talk tiles and speakers,
-               if the talks or names are not in English language please translate them to English, 
+               if the talk title is not in English language please translate them to English, 
                remove any duplicates if you find any and then render it as a table and do not add anything else"""
 
         query = data + prompt
