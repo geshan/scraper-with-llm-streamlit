@@ -27,15 +27,15 @@ def read_input():
         "https://devfest.gdgauckland.nz",
         "https://gdg.community.dev/events/details/google-gdg-nyc-presents-devfest-nyc-2024-responsible-ai-for-the-future-of-tech/",
         "https://devfestlagos.com/schedule",
-        "https://devfest.gdgparis.fr/agenda",
+        "https://devfest.gdgparis.fr/agenda", # has titles in French
     ]
     for url in urls:
         print(url)
-        r = requests.get(url)
-        soup = BeautifulSoup(r.text, 'html.parser')
+        response = requests.get(url)
+        soup = BeautifulSoup(response.text, 'html.parser')
         data = soup.text
         prompt = """ from the provided html please pick out all the talk tiles and speakers, 
-               if the talks or names are not in English language please translate them to English, 
+               if any of the talk title is not in English language please translate them to English, 
                remove any duplicates if you find any and then render it as a table and do not add anything else"""
 
         query = data + prompt
