@@ -35,8 +35,8 @@ def read_input():
 
    for url in links:
        print(url)
-       r = requests.get(url)
-       soup = BeautifulSoup(r.text, 'html.parser')
+       response = requests.get(url)
+       soup = BeautifulSoup(response.text, 'html.parser')
        data = soup.text
        prompt = """ from the provided html please pick out the talk tiles and speakers, 
        if the talks or names are not in English language please translate them to english, 
