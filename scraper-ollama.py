@@ -1,0 +1,38 @@
+import requests
+from bs4 import BeautifulSoup
+from litellm import completion
+import os
+
+def call_llm(query):
+    response = completion(
+        model="ollama/gemma2:9b",
+        messages=[{ "content": query, "role": "user"}],
+        api_base=os.environ['OLLAMA_GEMMA2_9B_BASE_URL']
+    )
+
+    return response["choices"][0]["message"]["content"]
+
+def llm_function(url, query):
+    #st.subheader("Talks from : "+ url)
+    response_text = call_llm(query)
+    #st.markdown(response.text)
+    print(response_text)
+
+def read_input():
+    urls = [
+        "https://gdg.community.dev/events/details/google-gdg-bangalore-presents-devfest-bangalore-2024/"
+    ]
+    for url in urls:
+        print(url)
+        response = requests.get(url)
+        soup = BeautifulSoup(response.text, 'html.parser')
+        data = soup.text
+        prompt = """ from the provided html or json please pick out all the talk tiles and speakers,
+               if the talk title is not in English language please translate them to English, 
+               remove any duplicates if you find any and then render it as a table and do not add anything else"""
+
+        query = data + prompt
+        llm_function(url, query)
+
+if __name__ == "__main__":
+    read_input()
